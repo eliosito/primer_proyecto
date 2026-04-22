@@ -1,0 +1,29 @@
+.App {  
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+
+.Tarjeta {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  margin: 10px;
+  background-color: aquamarine;
+  border-radius:15px;
+}
+
+.Listado {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+
+}
+
