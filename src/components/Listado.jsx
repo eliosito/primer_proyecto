@@ -5,7 +5,7 @@ import Tarjeta from './Tarjeta'
 
 export default function Listado({personas}) {
   return (
-    <div>
+    <div style={{flex: 3}}>
         <h1>Listado</h1>
 
         <div className='Listado'>
@@ -14,6 +14,7 @@ export default function Listado({personas}) {
         documento={persona.documento}
         apellidos={persona.apellidos}
         nombres={persona.nombres}
+        alumno={persona.alumno}
         />
         )}
        

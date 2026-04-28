@@ -5,6 +5,32 @@
   flex-direction: column;
 }
 
+.Contenedor {
+  flex-direction: flex;
+  display: flex;
+  flex: 1;
+}
+
+.Formulario {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+
+.Formulario form {
+  margin: 15px;
+  border-radius: 15px;
+  background-color: lightgrey;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Formulario input,select,button{
+  margin: 10px 5px;
+}
 
 .Tarjeta {
 
@@ -19,11 +45,14 @@
 }
 
 .Listado {
+  
+  flex: 1;
 
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-items: center;
+  align-items: center;
 
 }
 
