@@ -1,32 +1,23 @@
-import React, { use } from 'react'
-import { useState } from 'react';
+
+import usePersona from '../hooks/usePersona';
+
+
 export default function Formulario({guardar}) {
+
+    const [persona, setDatoPersona] = usePersona();
 
     const hanlderSubmit = (e) => {
         e.preventDefault();
-        console.log({documento,apellidos,nombres,rol,ano,division})
 
-        const alumno = rol == "alumno";
+        const alumno = persona.rol == "alumno";
 
-        const persona = {
-            documento,
-            apellidos,
-            nombres,
-            alumno,
-            ano,
-            division
-        }
+        const id = (new Date()).getTime();
 
-        guardar(persona);
+        guardar({...persona, alumno,id});
 
     }
 
-    const [documento, setDocumento] = useState("");
-    const [apellidos, setApellidos] = useState("");
-    const [nombres, setNombres] = useState("");
-    const [rol, setRol] = useState("-1");
-    const [ano, setAno] = useState("")
-    const [division, setDivision] = useState("")
+
 
   return (
     <div className='Formulario'>
@@ -37,27 +28,27 @@ export default function Formulario({guardar}) {
             <input 
             type="text"
             placeholder='Documento'
-            onChange={(e) => setDocumento(e.target.value)}
-            value={documento}
+            onChange={(e) => setDatoPersona("documento", e.target.value)}
+            value={persona.documento}
             />
             <input 
             type="text"
             placeholder='Apellidos'
-            onChange={(e) => setApellidos(e.target.value)}
-            value={apellidos}
+            onChange={(e) => setDatoPersona("apellidos", e.target.value)}
+            value={persona.apellidos}
 
 
             />
             <input 
             type="text"
             placeholder='Nombres'
-            onChange={(e) => setNombres(e.target.value)}
-            value={nombres}
+            onChange={(e) => setDatoPersona("nombres", e.target.value)}
+            value={persona.nombres}
             />
 
             <select
-            onChange={(e) => setRol(e.target.value)}
-            value={rol}
+            onChange={(e) => setDatoPersona("rol", e.target.value)}
+            value={persona.rol}
             >
                 <option value="-1" disabled>Seleccionar rol</option>
                 
@@ -68,8 +59,8 @@ export default function Formulario({guardar}) {
             <label>Año</label>
 
             <select 
-            onChange={(e) => setAno(e.target.value)}
-            value={ano}
+            onChange={(e) => setDatoPersona("ano", e.target.value)}
+            value={persona.ano}
              >
                 <option value="1ro">1ro</option>
                 <option value="2do">2do</option>
@@ -78,8 +69,8 @@ export default function Formulario({guardar}) {
             </select>
             <label>Division</label>
             <select 
-            onChange={(e) => setDivision(e.target.value)}
-            value={division}
+            onChange={(e) => setDatoPersona("division", e.target.value)}
+            value={persona.division}
              >
                 <option value="1ra">1ra</option>
                 <option value="2da">2da</option>

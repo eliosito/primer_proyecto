@@ -4,7 +4,7 @@ import React from 'react'
 const documento = "43323233";
 const nombres = "Elio";
 const apellidos = "Villarroel";
-export default function Tarjeta({documento,apellidos,nombres,alumno,ano,division}) {
+export default function Tarjeta({documento,apellidos,nombres,alumno,ano,division,eliminar}) {
   return (
     <div className='Tarjeta'
     style={{backgroundColor: alumno ?"aquamarine" : "blueviolet",
@@ -12,7 +12,7 @@ export default function Tarjeta({documento,apellidos,nombres,alumno,ano,division
       color: alumno ? "black" : "white"
     }}
     >    
-        <span className='eliminar' onClick={() => alert("eliminar")}>X</span>
+        <span className='eliminar' onClick={() => eliminar()}>X</span>
         <h2>{documento}</h2>
         <h3>{apellidos},{nombres}</h3>
         <h4>{ano},{division}</h4>
