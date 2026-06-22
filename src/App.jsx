@@ -4,17 +4,11 @@ import axios from "axios";
 import './App.css';
 import Formulario from "./components/Formulario";
 import {Router,Route , Switch } from 'wouter'
+import Header from "./components/Header";
 
-const personasDefault = [
-  { id: 1, documento: "2323232sd", apellidos: "Perez", nombres: "Juan", alumno: true },
-  { id: 2, documento: "345354545242", apellidos: "Villarroel", nombres: "Elio", alumno: true },
-  { id: 3, documento: "3676767242", apellidos: "Perez", nombres: "Juan", alumno: false },
-  { id: 4, documento: "4343434", apellidos: "Perez", nombres: "Juan", alumno: false }
-];
+
 
 export default function App() {
-
-  const [personas, setPersonas] = useState(personasDefault)
 
 
   useEffect(() =>{
@@ -29,14 +23,10 @@ export default function App() {
 
   }, [])
 
-  const eliminar = (persona_id) => {
-    const nuevasPersonas = personas.filter((persona) => persona.id != persona_id)
-    console.log (nuevasPersonas)
-    setPersonas(nuevasPersonas)
-  }
 
   return (
-    <>
+    <div className="App">
+      <Header/>
     <Router>
     <Switch>
       <Route path="/nueva">
@@ -49,8 +39,7 @@ export default function App() {
       <Route path="/listado">
 
         <Listado
-          personas={personas}
-          eliminar={(persona_id) => eliminar(persona_id)}/>
+        />
       
       </Route>
 
@@ -70,24 +59,8 @@ export default function App() {
 
     </Router>
       
-    </>
+    </div>
 
-/*     <div className="App">
-      <h1> Componente app</h1>
-      <div className="Contenedor">
-        <Formulario
-          guardar={(persona) => guardar(persona)}
-        />
-        <Listado
-          personas={personas}
-          eliminar={(persona_id) => eliminar(persona_id)}
-        />
-      </div>
-
-
-
-
-    </div> */
 
   )/*  */
 }

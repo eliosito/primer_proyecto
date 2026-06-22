@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Formulario() {
 
-    const [persona, setDatoPersona] = usePersona();
+    const [persona, setDatoPersona] = usePersona([]);
 
     const hanlderSubmit = (e) => {
         e.preventDefault();

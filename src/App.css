@@ -68,3 +68,23 @@
   right: 10px;
   cursor:pointer;
 }
+
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  width: 100vw;
+  justify-content:center;
+  background-color: grey;
+}
+
+.Header .Opcion {
+  padding: 5px 20px;
+  margin: 0 20px;
+  background-color: lightgray;
+  border-radius: 15px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
