@@ -7,8 +7,9 @@ export default function usePersona () {
     const [apellidos, setApellidos] = useState("");
     const [nombres, setNombres] = useState("");
     const [rol, setRol] = useState("-1");
-    const [ano, setAno] = useState("")
+    const [anio, setAnio] = useState("")
     const [division, setDivision] = useState("")
+3
 
     const cambiarDato = (campo, valor) => {
 
@@ -18,7 +19,7 @@ export default function usePersona () {
             nombres : (valor) => setNombres(valor),
             rol : (valor) => setRol(valor),
             division : (valor) => setDivision(valor),
-            ano: (valor) => setAno(valor)
+            ano: (valor) => setAnio(valor)
 
         }
 
@@ -27,7 +28,7 @@ export default function usePersona () {
     }
 
     return [
-        {documento, apellidos, nombres , rol , ano, division},
+        {documento, apellidos, nombres , rol , anio, division},
         cambiarDato
     ]
 }
